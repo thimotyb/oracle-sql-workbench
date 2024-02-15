@@ -3,3 +3,7 @@
 # From prompt:
 docker login container-registry.oracle.com/database
 docker run -d --name mydb container-registry.oracle.com/database/enterprise:21.3.0.0
+# Change password
+docker exec mydb ./setPassword.sh <your_password>
+# Connect
+docker exec -it mydb sqlplus / as sysdba
