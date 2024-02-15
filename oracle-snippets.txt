@@ -1,0 +1,5 @@
+# Go to https://container-registry.oracle.com/ords/f?p=113:10:113909188198628:::::
+# Sign in, go to Databases / Enterprise, Accept licens
+# From prompt:
+docker login container-registry.oracle.com/database
+docker run -d --name mydb container-registry.oracle.com/database/enterprise:21.3.0.0
