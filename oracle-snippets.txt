@@ -1,3 +1,48 @@
+# setup
+sudo apt install openjdk-11-jdk
+sudo apt install docker.io
+
+======================================================
+
+INSTALL DOCKER AND MINIKUBE ON LOCAL UBUNTU
+
+sudo apt update
+sudo apt install docker.io
+sudo docker --version
+sudo docker run hello-world
+
+https://minikube.sigs.k8s.io/docs/start/
+
+curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+sudo install minikube-linux-amd64 /usr/local/bin/minikube
+
+https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/
+
+curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+curl -LO "https://dl.k8s.io/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl.sha256"
+sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+
+Install Calico:
+https://projectcalico.docs.tigera.io/getting-started/kubernetes/minikube
+
+# Add current user to docker group
+(sudo minikube delete) # delete previous cluster if necessary
+sudo usermod -aG docker $USER && newgrp docker
+minikube start --network-plugin=cni --cni=calico
+
+kubectl get nodes -o wide
+# Set autocomplete and alias
+source <(kubectl completion bash) # set up autocomplete in bash into the current shell, bash-completion package should be installed first.
+echo "source <(kubectl completion bash)" >> ~/.bashrc # add autocomplete permanently to your bash shell.
+alias k=kubectl
+complete -o default -F __start_kubectl k
+
+=======================================================
+
+INSTALL ORACLE ENTERPRISE
+
+================================================
+
 # Go to https://container-registry.oracle.com/ords/f?p=113:10:113909188198628:::::
 # Sign in, go to Databases / Enterprise, Accept licens
 # From prompt:
