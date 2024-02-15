@@ -58,3 +58,8 @@ docker exec -it mydb sqlplus sys/OracleOracle@ORCLCDB as sysdba
 # PDB: Username sys, PW OracleOracle, Role SYSDBA, localhost, 1521, Service Name ORCLPDB1
 # In PDB, create user STUDENT, Grant Privileges, Role Default
 
+# Stop and restart
+docker stop mydb
+docker start mydb
+docker ps
+
