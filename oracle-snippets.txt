@@ -6,10 +6,10 @@ sudo apt install docker.io
 
 INSTALL DOCKER AND MINIKUBE ON LOCAL UBUNTU
 
-sudo apt update
-sudo apt install docker.io
-sudo docker --version
-sudo docker run hello-world
+  sudo apt update
+  sudo apt install docker.io
+  sudo docker --version
+  sudo docker run hello-world
 
 https://minikube.sigs.k8s.io/docs/start/
 
@@ -42,6 +42,14 @@ complete -o default -F __start_kubectl k
 INSTALL ORACLE ENTERPRISE
 
 ================================================
+
+# Install Docker
+sudo apt update
+sudo apt install docker.io
+sudo docker --version
+sudo docker run hello-world
+# Add current user to docker group
+sudo usermod -aG docker $USER && newgrp docker
 
 # Go to https://container-registry.oracle.com/ords/f?p=113:10:113909188198628:::::
 # Sign in, go to Databases / Enterprise, Accept licens
