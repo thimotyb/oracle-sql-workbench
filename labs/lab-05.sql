@@ -21,7 +21,7 @@ SELECT job_id, CASE
     WHEN job_id = 'IT_PROG' THEN 'C'
     WHEN job_id = 'ST_MAN'  THEN 'B'
     WHEN job_id = 'AD_PRES' THEN 'A'
-    ELSE '0' 
+    ELSE '0' END GRADE
 FROM employees;
 
 SELECT job_id, decode (job_id, 
@@ -29,7 +29,7 @@ SELECT job_id, decode (job_id,
   'SA_REP', 'D',
    'IT_PROG', 'C',
    'ST_MAN', 'B',
-   'AD_PRES', 'A'
+   'AD_PRES', 'A',
    '0') GRADE 
 FROM employees;
 
